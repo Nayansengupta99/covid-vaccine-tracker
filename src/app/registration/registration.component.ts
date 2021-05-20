@@ -17,7 +17,7 @@ export class RegistrationComponent implements OnInit {
   age:any;
   showAge:any;
   dateOfBirth: any;
-  public user: User = new User(0, "", "", 0, "");
+  public user: User = new User(0, "", "", 0, "","");
 
 
   message: any;
@@ -76,7 +76,7 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-  selectedDistrict: String = "--Choose District--";
+  district: String = "--Choose District--";
   vaccineCentres: Array<any> = []
   Districts: Array<any> = [
     { name: 'Alipurduar', vaccineCentres: ['Uttar Latabari RH -735217', 'Railway Jn - 736123', 'Alipurduar DH new', 'ALipurduar DH', 'Madarihat RH - 735220', 'Jasodanga RH - 736208'] },

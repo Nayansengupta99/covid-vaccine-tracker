@@ -4,15 +4,17 @@ export class User{
     userId:number=0
    name:string=""
    email:string=""
-   exp:number=0
-   domain:string=""
+   age:number=0
+   district:string=""
+   covidCenter:string=""
     
     constructor(
         userId:number,
         name:string,
         email:string,
-        exp:number,
-        domain:string
+        age:number,
+        district:string,
+        covidCenter:string
 
     ){
 
