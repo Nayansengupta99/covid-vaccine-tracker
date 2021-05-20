@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../Desktop/first-angular-project"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
