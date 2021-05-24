@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class UserRegistrationService {
 
 
-  
+
   constructor(private http:HttpClient) { 
 
   }
@@ -17,18 +17,18 @@ export class UserRegistrationService {
 
 
   public doRegister( user: any){
-    return this.http.post("https://register-ms-heroku.herokuapp.com/user/register",user,{responseType:'text' as 'json'});
+    return this.http.post("http://localhost:8080/user/register",user,{responseType:'text' as 'json'});
   }
 
 
   public getUsers(){
-    return this.http.get("https://register-ms-heroku.herokuapp.com/user/");
+    return this.http.get("http://localhost:8080/user/");
   }
   public getUserByName(name:string){
-    return this.http.get("https://register-ms-heroku.herokuapp.com/user/"+name)
+    return this.http.get("http://localhost:8080/user/"+name)
   }
 public deteleUserByName(id:number){
-  return this.http.delete("https://register-ms-heroku.herokuapp.com/user/delete/"+id,{responseType:'text' as 'json'})
+  return this.http.delete("http://localhost:8080/user/delete/"+id,{responseType:'text' as 'json'})
 }
 
 

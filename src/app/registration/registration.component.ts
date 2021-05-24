@@ -1,6 +1,7 @@
 import { UserRegistrationService } from './../user-registration.service';
 import { User } from './../user';
 import { Component, OnInit } from '@angular/core';
+
 import Cotter from "cotter";
 import * as moment from 'moment';
 @Component({
@@ -24,12 +25,7 @@ export class RegistrationComponent implements OnInit {
   constructor(private service: UserRegistrationService) { }
 
 
-  public registerNow() {
-
-    let resp = this.service.doRegister(this.user);
-    resp.subscribe((data) => this.message = data);
-  }
-
+ 
 
 
   onHit(event: any) {
@@ -76,13 +72,14 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-  district: String = "--Choose District--";
+  district: string = "--Choose District--";
+  vC:string="Vaccine Center"
   vaccineCentres: Array<any> = []
-  Districts: Array<any> = [
+  districts: Array<any> = [
     { name: 'Alipurduar', vaccineCentres: ['Uttar Latabari RH -735217', 'Railway Jn - 736123', 'Alipurduar DH new', 'ALipurduar DH', 'Madarihat RH - 735220', 'Jasodanga RH - 736208'] },
-    {
-      name: 'Bankura', vaccineCentres: []
-    },
+    // {
+    //   name: 'Bankura', vaccineCentres: []
+    // },
     { name:'Birbhum',vaccineCentres:['Sainthia RH Polling -731234',
 
     'Md Bazar BPHC polling -731132',
@@ -176,9 +173,19 @@ export class RegistrationComponent implements OnInit {
     // { name: 'India', states: [ {name: 'E', cities: ['Delhi', 'Kolkata', 'Mumbai', 'Bangalore']} ] },
   ];
   changeDistrict(dist: any) {
-    this.vaccineCentres = this.Districts.find((d: any) => d.name == dist.target.value).vaccineCentres;
+    this.vaccineCentres = this.districts.find((d: any) => d.name == dist.target.value).vaccineCentres;
   }
 
+  public registerNow() {
+    this.user.district=this.district
+    
+    this.user.vaccineCenter=this.vC
+    
+    this.user.age=this.age
+    
+    let resp = this.service.doRegister(this.user);
+    resp.subscribe((data) => this.message = data);
+  }
 
 
 

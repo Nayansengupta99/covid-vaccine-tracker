@@ -38,23 +38,24 @@
                     <div *ngIf="dateOfBirth?calculateAge(dateOfBirth):false;"></div>
                     <div class="form-group">
                         <label for="lastname"><span class="req">* </span> Age : </label>
-                        <input class="form-control" type="text" value={{age}} [(ngModel)]="user.age" name="experience" id="txt" placeholder="Age" disabled/>
+                        <input class="form-control" type="text" value={{age}} [(ngModel)]="user.age" name="AGE" id="txt" placeholder="Age" disabled/>
                         <div id="errLast"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="lastname"><span class="req">* </span> District : </label><br>
-                        <select placeholder="District" [(ngModel)]="user.district" (change)="changeDistrict($event)">
+                        <select [(ngModel)]="district" name="district" placeholder="District" (change)="changeDistrict($event)">
                             <option>--Choose District--</option>
-                            <option *ngFor="let d of Districts">{{d.name}}</option>
+                            <option *ngFor="let d of districts">{{d.name}}</option>
                         </select>
+
                     </div>
 
                     <div class="form-group">
                         <label for="lastname"><span class="req">* </span> Vaccine Centers : </label><br>
-                        <select [(ngModel)]="user.covidCenter" placeholder="Vaccine Centers">
+                        <select [(ngModel)]="vC" name="vaccine" placeholder="Vaccine Centers">
                             <option>--Choose Vaccine Center--</option>
-                            <option *ngFor="let v of  vaccineCentres">{{v}}</option>
+                            <option *ngFor="let v of  vaccineCentres" >{{v}}</option>
                         </select>
                     </div>
                     <div class="form-group">

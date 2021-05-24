@@ -6,7 +6,7 @@ export class User{
    email:string=""
    age:number=0
    district:string=""
-   covidCenter:string=""
+   vaccineCenter:string=""
     
     constructor(
         userId:number,
@@ -14,7 +14,7 @@ export class User{
         email:string,
         age:number,
         district:string,
-        covidCenter:string
+        vaccineCenter:string
 
     ){
 

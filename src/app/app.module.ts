@@ -7,6 +7,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SearchDeleteComponent } from './search-delete/search-delete.component';
 import { UserRegistrationService } from './user-registration.service';
 import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+   
   ],
   providers: [UserRegistrationService ],
   bootstrap: [AppComponent]
