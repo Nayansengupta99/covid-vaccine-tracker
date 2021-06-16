@@ -47,9 +47,10 @@
 
                     <div class="form-group">
                         <label for="lastname"><span class="req">* </span> District : </label><br>
-                        <select [(ngModel)]="district" name="district" placeholder="District" (change)="changeDistrict($event)">
+                        <select [(ngModel)]="district" (change)="displaySelectedDistrict($event)" name="district" placeholder="District">
                             <option>--Choose District--</option>
-                            <option *ngFor="let d of districts">{{d.name}}</option>
+                            <option *ngFor="let d of response.districts"[value]="d.district_id" >{{d.district_name}}</option>
+                           
                         </select>
 
                     </div>
@@ -58,7 +59,7 @@
                         <label for="lastname"><span class="req">* </span> Vaccine Centers : </label><br>
                         <select [(ngModel)]="vC" name="vaccine" placeholder="Vaccine Centers">
                             <option>--Choose Vaccine Center--</option>
-                            <option *ngFor="let v of  vaccineCentres" >{{v}}</option>
+                            <option *ngFor="let v of vaccineCenters" >{{v.name}}</option>
                         </select>
                     </div>
                     <div class="form-group">

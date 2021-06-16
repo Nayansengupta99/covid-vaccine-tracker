@@ -7,6 +7,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SearchDeleteComponent } from './search-delete/search-delete.component';
 import { UserRegistrationService } from './user-registration.service';
 import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
    
   ],
-  providers: [UserRegistrationService ],
+  providers: [UserRegistrationService ,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
